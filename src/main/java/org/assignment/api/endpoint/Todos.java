@@ -5,12 +5,16 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.*;
 
-public class Todos extends BasePage {
+public class Todos extends BaseAPI {
     final static String endpoint = "/todos";
+    public Todos(){
+        super();
+        responsePath += this.getClass().getSimpleName() + ".txt";
+    }
 
     public Map<Integer, Double[]> getMapOfUserTaskCompletion() {
         try {
-            List listOfAllTodos = new GetRequest(environment, endpoint).getResponse().extractDataAsList("");
+            List listOfAllTodos = new GetRequest(environment, endpoint).getResponse(responsePath).extractDataAsList("");
             //Create a map with key as id and value an array containing the completed, total and percentage todos count
             HashMap<Integer, Double[]> completionPercentage = new HashMap<>();
             for (Object todos : listOfAllTodos) {

@@ -8,9 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class Users extends BasePage {
+public class Users extends BaseAPI {
     final static String endpoint = "/users";
-
+    public Users(){
+        super();
+        responsePath += this.getClass().getSimpleName() + ".txt";
+    }
     public Set<Integer> getUsersBasedOnLocation(String city, String latitude, String longitude) {
         try {
             double startLatitude = Double.parseDouble(latitude.split("To")[0].trim());
@@ -18,7 +21,7 @@ public class Users extends BasePage {
             double startLongitude = Double.parseDouble(longitude.split("To")[0].trim());
             double endLongitude = Double.parseDouble(longitude.split("To")[1].trim());
 
-            Response response = new GetRequest(environment, endpoint).getResponse();
+            Response response = new GetRequest(environment, endpoint).getResponse(responsePath);
             List listOfAllUsers = response.extractDataAsList("id");
             List listOfGeoLocation = response.extractDataAsList("address.geo");
             Set<Integer> setOfUsersBelongsToTheCity = new HashSet<>();

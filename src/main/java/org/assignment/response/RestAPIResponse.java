@@ -32,4 +32,8 @@ public class RestAPIResponse implements Response {
     public String extractDataAsString(String jsonPathExtractString) {
         return this.path.getString(jsonPathExtractString);
     }
+
+    public void writeRequestDetailsToFile(){
+        this.validatableResponse.extract().response().asString();
+    }
 }
