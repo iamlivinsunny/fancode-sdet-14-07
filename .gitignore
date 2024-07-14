@@ -1,4 +1,4 @@
 target/
 allure-results/
-src/test/resources/api-response
-src/test/resources/execution-reports
+src/test/resources/api-response/
+src/test/resources/execution-reports/
