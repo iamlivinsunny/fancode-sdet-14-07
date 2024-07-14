@@ -6,11 +6,11 @@ Pre-requisites:
 
 Steps to execute the project:
 
-  *  Clone the project to the local
-  *  Switch to the main branch
+  *  Clone the project to the local using command `git clone git@github.com:iamlivinsunny/fancode-sdet-14-07.git`
+  *  Switch to the main branch `git switch main`
   *  Inside project root folder open command line
   *  Execute command `mvn clean test`
-  *  The execution result will be in the folder `FanCodeSDETAssignment\src\test\resources\execution-reports`
+  *  The execution result will be in the folder `src\test\resources\execution-reports`
 
 Major Libraries Userd:
   *  Java - Programming Language
