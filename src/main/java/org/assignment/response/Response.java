@@ -13,4 +13,6 @@ public interface Response {
     Map extractDataAsMap(String jsonPath);
 
     String extractDataAsString(String jsonPath);
+
+    void writeRequestDetailsToFile();
 }

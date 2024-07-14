@@ -25,14 +25,17 @@ public class RestAPIResponse implements Response {
         return this.path.getList(jsonPathExtractString);
     }
 
+    @Override
     public Map extractDataAsMap(String jsonPathExtractString) {
         return this.path.getMap(jsonPathExtractString);
     }
 
+    @Override
     public String extractDataAsString(String jsonPathExtractString) {
         return this.path.getString(jsonPathExtractString);
     }
 
+    @Override
     public void writeRequestDetailsToFile(){
         this.validatableResponse.extract().response().asString();
     }
