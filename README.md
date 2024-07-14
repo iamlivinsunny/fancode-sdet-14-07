@@ -1,16 +1,16 @@
 Pre-requisites:
 
-  JDK version 11 or later
-  Maven build management tool configured in the System Environment variable
-  Internet connection to download dependency from the maven repository
+  *  JDK version 11 or later
+  *  Maven build management tool configured in the System Environment variable
+  *  Internet connection to download dependency from the maven repository
 
 Steps to execute the project:
 
-  Clone the project to the local
-  Switch to the main branch
-  Inside project root folder open command line
-  Execute command `mvn clean test`
-  The execution result will be in the folder `FanCodeSDETAssignment\src\test\resources\execution-reports`
+  *  Clone the project to the local
+  *  Switch to the main branch
+  *  Inside project root folder open command line
+  *  Execute command `mvn clean test`
+  *  The execution result will be in the folder `FanCodeSDETAssignment\src\test\resources\execution-reports`
 
 Folder structure:
 
