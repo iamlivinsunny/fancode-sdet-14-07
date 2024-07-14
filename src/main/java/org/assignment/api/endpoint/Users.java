@@ -1,4 +1,4 @@
-package org.assignment.pages;
+package org.assignment.api.endpoint;
 
 import org.assignment.request.GetRequest;
 import org.assignment.response.Response;

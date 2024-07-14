@@ -3,8 +3,8 @@ package org.assignment.step_definition;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.assignment.pages.Todos;
-import org.assignment.pages.Users;
+import org.assignment.api.endpoint.Todos;
+import org.assignment.api.endpoint.Users;
 
 import java.util.Map;
 import java.util.Set;

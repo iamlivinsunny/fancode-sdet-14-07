@@ -7,6 +7,6 @@ Feature: Todo task completion verification
 
     Examples:
       | City    | altitude | longitude | criteria | percentage |
-      | FanCode | -40 To 5 | 5 To 10   | Greater  | 50         |
-#      | FanCode | -40 To 5 | 5 To 10   | Greater  | 10         |
+#      | FanCode | -40 To 5 | 5 To 10   | Greater  | 50         |
+      | FanCode | -40 To 5 | 5 To 10   | Greater  | 10         |
 #      | FanCode | -40 To 5 | 5 To 10   | Greater  | 100        |
