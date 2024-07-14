@@ -12,6 +12,12 @@ public class Todos extends BaseAPI {
         responsePath += this.getClass().getSimpleName() + ".txt";
     }
 
+    /**
+     *  Returns a HashMap with the user id as key and a double array having completed task count,
+     *  total task count, and percentage of completed task as items
+     *
+     * @return  Map<Integer, Double[]> HashMap containing todos completion status
+     */
     public Map<Integer, Double[]> getMapOfUserTaskCompletion() {
         try {
             List listOfAllTodos = new GetRequest(environment, endpoint).getResponse(responsePath).extractDataAsList("");
@@ -40,6 +46,16 @@ public class Todos extends BaseAPI {
         return null;
     }
 
+    /**
+     *  This method is used for verifying the users belongs to the city meets the todos completion criteria
+     *  Details of users not meeting completing criteria will be captured in a SoftAssert and will assert
+     *  after complete verification
+     *
+     * @param userCompletionMap HashMap which contains the userId as key and completion details as a double array
+     * @param users Set of integer which contains the userId of users belonging to the city
+     * @param criteria  String value for comparison, Currently supports value "Greater"
+     * @param percentage    integer percentage which will be used to for comparison
+     */
     public void verifyUsersBelongsToTheCityMeetsCompletionCriteria(Map<Integer, Double[]> userCompletionMap, Set<Integer> users, String criteria, int percentage) {
         try {
             Iterator<Integer> userIterator = users.iterator();
@@ -47,7 +63,7 @@ public class Todos extends BaseAPI {
             while (userIterator.hasNext()) {
                 if (criteria.equals("Greater")) {
                     int userId = userIterator.next();
-                    if (userCompletionMap.get(userId)[2] < percentage) {
+                    if (!(userCompletionMap.get(userId)[2] > percentage)) {
                         String failureMessage = String.format("User with ID %d has %.2f%% TODO tasks pending.\n", userId, 100 - userCompletionMap.get(userId)[2]);
                         softAssert.assertTrue(false, failureMessage);
                     }

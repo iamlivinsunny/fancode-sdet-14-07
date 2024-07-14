@@ -14,6 +14,15 @@ public class Users extends BaseAPI {
         super();
         responsePath += this.getClass().getSimpleName() + ".txt";
     }
+
+    /**
+     * Returns a Set of userId which belongs to the city
+     *
+     * @param city String name of the city for task completion verification
+     * @param latitude  String contains start and end latitude separate by word To
+     * @param longitude String contains start and end longitude separate by word To
+     * @return  Set<Integer> userIds belongs to the specific city
+     */
     public Set<Integer> getUsersBasedOnLocation(String city, String latitude, String longitude) {
         try {
             double startLatitude = Double.parseDouble(latitude.split("To")[0].trim());
@@ -42,6 +51,14 @@ public class Users extends BaseAPI {
         return null;
     }
 
+    /**
+     * Returns true when the number is in bounds  and false otherwise
+     *
+     * @param value double value to be compared
+     * @param lowerBound    double lower bound
+     * @param upperBound    double upper bound
+     * @return  boolean whether value is in or out of bound
+     */
     public boolean isNumberRage(double value, double lowerBound, double upperBound) {
         try {
             if (value >= lowerBound && lowerBound <= upperBound)
